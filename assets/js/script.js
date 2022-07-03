@@ -1,3 +1,4 @@
+var rootEl = $('#root');
 var clock = document.getElementById("clock")
 var nineBlockInput = document.getElementById("nineBlock")
 var nineBlockBtn = document.getElementById("9-Btn")
@@ -18,8 +19,12 @@ var fourBlockBtn = document.getElementById("4-Btn")
 var fiveBlockInput =document.getElementById("fiveBlock")
 var fiveBlockBtn = document.getElementById("5-Btn")
 
+var nineTimeLabel = document.getElementById("9label")
 
-//initial function
+
+
+
+//initial function that parses the local data, checks to see if null and then puts existing data into input fields
 function init(){
     var nineBlockStored = JSON.parse(localStorage.getItem("9am"))
     if(nineBlockStored !== null){
@@ -84,7 +89,23 @@ function init(){
         return
     }
 
+//if statement to compare the value inside the text box to moment. Then sets CSS class based off that.
+    var ninePlaceholder = moment().format("HH")
+    if(nineTimeLabel.textContent == moment().format("HH")){
+        nineBlockInput.classList.add("present")
+    }else if(nineTimeLabel.textContent < moment().format("HH")){
+        console.log(nineTimeLabel.textContent)
+        nineBlockInput.classList.add("past")
+    }else if(nineTimeLabel.textContent > moment().format("HH")){
+        console.log(nineTimeLabel.textContent)
+        console.log(moment().format("HH"))
+        console.log(moment())
+        nineBlockInput.classList.add("future")
+    }
 
+
+
+    
     
 }
 
@@ -96,6 +117,9 @@ function updateTime(){
 
 setInterval(updateTime, 1000)
 
+
+
+//EVENT LISTENERS FOR EVERY SAVE BUTTON
 //9AM
 nineBlockBtn.addEventListener("click", function(event){
     event.preventDefault();
