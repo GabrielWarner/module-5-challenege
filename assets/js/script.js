@@ -8,18 +8,26 @@ var elevenBlockInput =document.getElementById("elevenBlock")
 var elevenBlockBtn = document.getElementById("11-Btn")
 var twelveBlockInput =document.getElementById("twelveBlock")
 var twelveBlockBtn = document.getElementById("12-Btn")
-var oneBlockInput =document.getElementById("oneBlock")
-var oneBlockBtn = document.getElementById("1-Btn")
-var twoBlockInput =document.getElementById("twoBlock")
-var twoBlockBtn = document.getElementById("2-Btn")
-var threeBlockInput =document.getElementById("threeBlock")
-var threeBlockBtn = document.getElementById("3-Btn")
-var fourBlockInput =document.getElementById("fourBlock")
-var fourBlockBtn = document.getElementById("4-Btn")
-var fiveBlockInput =document.getElementById("fiveBlock")
-var fiveBlockBtn = document.getElementById("5-Btn")
+var thirteenBlockInput =document.getElementById("oneBlock")
+var thirteenBlockBtn = document.getElementById("1-Btn")
+var fourteenBlockInput =document.getElementById("twoBlock")
+var fourteenBlockBtn = document.getElementById("2-Btn")
+var fifteenBlockInput =document.getElementById("threeBlock")
+var fifteenBlockBtn = document.getElementById("3-Btn")
+var sixteenBlockInput =document.getElementById("fourBlock")
+var sixteenBlockBtn = document.getElementById("4-Btn")
+var seventeenBlockInput =document.getElementById("fiveBlock")
+var seventeenBlockBtn = document.getElementById("5-Btn")
 
-var nineTimeLabel = document.getElementById("9label")
+var nineTimeLabel = document.getElementById("09").id
+var tenTimeLabel = document.getElementById("10").id
+var elevenTimeLabel = document.getElementById("11").id
+var twelveTimeLabel = document.getElementById("12").id
+var thirteenTimeLabel = document.getElementById("13").id
+var fourteenTimeLabel = document.getElementById("14").id
+var fifteenTimeLabel = document.getElementById("15").id
+var sixteenTimeLabel = document.getElementById("16").id
+var seventeenTimeLabel = document.getElementById("17").id
 
 
 
@@ -56,52 +64,114 @@ function init(){
 
     var oneBlockStored = JSON.parse(localStorage.getItem("1PM"))
     if(oneBlockStored !== null){
-        oneBlockInput.value = oneBlockStored.task
+        thirteenBlockInput.value = oneBlockStored.task
     }else{
         return
     }
 
     var twoBlockStored = JSON.parse(localStorage.getItem("2PM"))
     if(twoBlockStored !== null){
-        twoBlockInput.value = twoBlockStored.task
+        fourteenBlockInput.value = twoBlockStored.task
     }else{
         return
     }
 
     var threeBlockStored = JSON.parse(localStorage.getItem("3PM"))
     if(threeBlockStored !== null){
-        threeBlockInput.value = threeBlockStored.task
+        fifteenBlockInput.value = threeBlockStored.task
     }else{
         return
     }
 
     var fourBlockStored = JSON.parse(localStorage.getItem("4PM"))
     if(fourBlockStored !== null){
-        fourBlockInput.value = fourBlockStored.task
+        sixteenBlockInput.value = fourBlockStored.task
     }else{
         return
     }
 
     var fiveBlockStored = JSON.parse(localStorage.getItem("5PM"))
     if(fiveBlockStored !== null){
-        fiveBlockInput.value = fiveBlockStored.task
+        seventeenBlockInput.value = fiveBlockStored.task
     }else{
         return
     }
 
 //if statement to compare the value inside the text box to moment. Then sets CSS class based off that.
-    var ninePlaceholder = moment().format("HH")
-    if(nineTimeLabel.textContent == moment().format("HH")){
+    //var ninePlaceholder = moment().format("HH")
+    if(nineTimeLabel == moment().format("HH")){
         nineBlockInput.classList.add("present")
-    }else if(nineTimeLabel.textContent < moment().format("HH")){
-        console.log(nineTimeLabel.textContent)
+    }else if(nineTimeLabel < moment().format("HH")){
         nineBlockInput.classList.add("past")
-    }else if(nineTimeLabel.textContent > moment().format("HH")){
-        console.log(nineTimeLabel.textContent)
-        console.log(moment().format("HH"))
-        console.log(moment())
+    }else if(nineTimeLabel > moment().format("HH")){
         nineBlockInput.classList.add("future")
     }
+
+    if(tenTimeLabel == moment().format("HH")){
+        tenBlockInput.classList.add("present")
+    }else if(tenTimeLabel < moment().format("HH")){
+        tenBlockInput.classList.add("past")
+    }else if(tenTimeLabel > moment().format("HH")){
+        tenBlockInput.classList.add("future")
+    }
+
+    if(elevenTimeLabel == moment().format("HH")){
+        elevenBlockInput.classList.add("present")
+    }else if(elevenTimeLabel < moment().format("HH")){
+        elevenBlockInput.classList.add("past")
+    }else if(elevenTimeLabel > moment().format("HH")){
+        elevenBlockInput.classList.add("future")
+    }
+
+        if(twelveTimeLabel == moment().format("HH")){
+        twelveBlockInput.classList.add("present")
+    }else if(twelveTimeLabel < moment().format("HH")){
+        twelveBlockInput.classList.add("past")
+    }else if(twelveTimeLabel > moment().format("HH")){
+        twelveBlockInput.classList.add("future")
+    }
+
+    if(thirteenTimeLabel == moment().format("HH")){
+        thirteenBlockInput.classList.add("present")
+    }else if(thirteenTimeLabel < moment().format("HH")){
+        thirteenBlockInput.classList.add("past")
+    }else if(thirteenTimeLabel > moment().format("HH")){
+        thirteenBlockInput.classList.add("future")
+    }
+
+    if(fourteenTimeLabel == moment().format("HH")){
+        fourteenBlockInput.classList.add("present")
+    }else if(fourteenTimeLabel < moment().format("HH")){
+        fourteenBlockInput.classList.add("past")
+    }else if(fourteenTimeLabel > moment().format("HH")){
+        fourteenBlockInput.classList.add("future")
+    }
+
+    if(fifteenTimeLabel == moment().format("HH")){
+        fifteenBlockInput.classList.add("present")
+    }else if(fifteenTimeLabel < moment().format("HH")){
+        fifteenBlockInput.classList.add("past")
+    }else if(fifteenTimeLabel > moment().format("HH")){
+        fifteenBlockInput.classList.add("future")
+    }
+
+    if(sixteenTimeLabel == moment().format("HH")){
+        sixteenBlockInput.classList.add("present")
+    }else if(sixteenTimeLabel < moment().format("HH")){
+        sixteenBlockInput.classList.add("past")
+    }else if(sixteenTimeLabel > moment().format("HH")){
+        sixteenBlockInput.classList.add("future")
+    }
+
+    if(seventeenTimeLabel == moment().format("HH")){
+        seventeenBlockInput.classList.add("present")
+    }else if(seventeenTimeLabel < moment().format("HH")){
+        seventeenBlockInput.classList.add("past")
+    }else if(seventeenTimeLabel > moment().format("HH")){
+        seventeenBlockInput.classList.add("future")
+    }
+
+
 
 
 
@@ -165,7 +235,7 @@ twelveBlockBtn.addEventListener("click", function(event){
 })
 
 //1PM
-oneBlockBtn.addEventListener("click", function(event){
+thirteenBlockBtn.addEventListener("click", function(event){
     event.preventDefault();
 
     var one = {
@@ -176,44 +246,44 @@ oneBlockBtn.addEventListener("click", function(event){
 })
 
 //2PM
-twoBlockBtn.addEventListener("click", function(event){
+fourteenBlockBtn.addEventListener("click", function(event){
     event.preventDefault();
 
     var two = {
-        task: twoBlockInput.value
+        task: fourteenBlockInput.value
     }
 
     localStorage.setItem("2PM", JSON.stringify(two))
 })
 
 //3PM
-threeBlockBtn.addEventListener("click", function(event){
+fifteenBlockBtn.addEventListener("click", function(event){
     event.preventDefault();
 
     var three = {
-        task: threeBlockInput.value
+        task: fifteenBlockInput.value
     }
 
     localStorage.setItem("3PM", JSON.stringify(three))
 })
 
 //4PM
-fourBlockBtn.addEventListener("click", function(event){
+sixteenBlockBtn.addEventListener("click", function(event){
     event.preventDefault();
 
     var four = {
-        task: fourBlockInput.value
+        task: sixteenBlockInput.value
     }
 
     localStorage.setItem("4PM", JSON.stringify(four))
 })
 
 //5PM
-fiveBlockBtn.addEventListener("click", function(event){
+seventeenBlockBtn.addEventListener("click", function(event){
     event.preventDefault();
 
     var five = {
-        task: fiveBlockInput.value
+        task: seventeenBlockInput.value
     }
 
     localStorage.setItem("5PM", JSON.stringify(five))

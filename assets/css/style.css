@@ -1,15 +1,22 @@
-#nineBlock{
-    background-color: ;
-}
-
 .past{
-background-color: red;
+background-color: rgb(250, 77, 77);
 }
 
 .present{
-background-color: green;
+background-color: rgb(0, 151, 0);
 }
 
 .future{
 background-color: grey;
+}
+
+input{
+    font-weight: bold;
+    font-size: 3em;
+}
+
+.form-control{
+    font-size: 2em;
+    font-weight: bold;
+    
 }
