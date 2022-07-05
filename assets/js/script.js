@@ -29,11 +29,15 @@ var fifteenTimeLabel = document.getElementById("15").id
 var sixteenTimeLabel = document.getElementById("16").id
 var seventeenTimeLabel = document.getElementById("17").id
 
+var today = moment();
+$("#clock").text(today.format("MMM Do, YYYY"));
+
 
 
 
 //initial function that parses the local data, checks to see if null and then puts existing data into input fields
 function init(){
+    console.log(moment().format("HH"))
     var nineBlockStored = JSON.parse(localStorage.getItem("9am"))
     if(nineBlockStored !== null){
         nineBlockInput.value = nineBlockStored.task
@@ -180,12 +184,9 @@ function init(){
 }
 
 //function that updates time using moment API
-function updateTime(){
-    var time = moment().format('MMMM Mo YYYY');
-    clock.textContent = time
-}
 
-setInterval(updateTime, 1000)
+
+
 
 
 
