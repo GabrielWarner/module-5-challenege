@@ -103,7 +103,7 @@ function init(){
 
 //if statement to compare the value inside the text box to moment. Then sets CSS class based off that.
     //var ninePlaceholder = moment().format("HH")
-    if(nineTimeLabel == moment().format("HH")){
+    if(nineTimeLabel === moment().format("HH")){
         nineBlockInput.classList.add("present")
     }else if(nineTimeLabel < moment().format("HH")){
         nineBlockInput.classList.add("past")
